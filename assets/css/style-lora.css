@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: #f7f5ef;
+  --color-bg-panel: #f1efe6;
+  --color-ink: #16140f;
+  --color-ink-soft: #57544a;
+  --color-navy: #16140f;       /* réutilisé par les templates existants */
+  --color-navy-deep: #16140f;
+  --color-gold: #2f6d5d;       /* seul accent du site */
+  --color-gold-soft: #cfe0d9;
+  --color-coral: #2f6d5d;
+  --border: 1.5px solid var(--color-ink);
+  --radius-cover: 0px;
+  --max-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: 'Public Sans', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  color: var(--color-ink);
+  line-height: 1.05;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p { max-width: 62ch; color: var(--color-ink-soft); }
+
+a { color: var(--color-gold); text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  border-bottom: 1.5px solid var(--color-ink);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
+.site-header .logo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.site-header .logo:hover { text-decoration: none; opacity: 0.75; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--color-ink);
+  color: var(--color-ink);
+  font-size: 0.95rem;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--color-ink-soft);
+  font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-gold);
+  text-decoration: none;
+}
+
+/* Pas de vague nautique ici : diviseur discret uniquement */
+.wave { display: none; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  padding: 4.5rem 0 5rem;
+  text-align: left;
+}
+
+.hero h1 { color: var(--color-ink); max-width: 14ch; }
+.hero p { color: var(--color-ink-soft); font-size: 1.2rem; max-width: 48ch; }
+
+.btn {
+  display: inline-block;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 0.7rem 1.3rem;
+  border-radius: 0;
+  font-weight: 600;
+  border: 1.5px solid var(--color-ink);
+}
+
+.btn:hover { text-decoration: none; background: var(--color-gold); border-color: var(--color-gold); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+}
+
+.btn-outline:hover { background: var(--color-ink); color: var(--color-bg); }
+
+/* ---------- Sections ---------- */
+section { padding: 3.2rem 0; }
+section.alt { background: var(--color-bg-panel); }
+
+.eyebrow-free-heading { margin-bottom: 1.8rem; }
+
+/* ---------- Ce qu'on propose : liste sobre plutôt que cartes ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0;
+  border-top: 1.5px solid var(--color-ink);
+}
+
+.feature-card {
+  border: none;
+  border-bottom: 1.5px solid var(--color-ink);
+  border-right: 1.5px solid var(--color-ink);
+  background: transparent;
+  padding: 1.6rem 1.4rem;
+}
+
+.feature-card:last-child { border-right: none; }
+
+/* ---------- Book shelf : grille sobre, sans rotation ---------- */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem 1.3rem;
+}
+
+.book {
+  display: block;
+  color: var(--color-ink);
+}
+
+.book:hover { text-decoration: none; }
+
+.book-cover {
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background: var(--color-bg-panel);
+  transition: opacity 0.15s ease;
+}
+
+.book-cover.carre { aspect-ratio: 1 / 1; }
+
+.book:hover .book-cover { opacity: 0.85; }
+
+.book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.book h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
+  color: var(--color-ink);
+}
+
+.book .achat {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+/* ---------- Fiche livre ---------- */
+.livre-detail {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .livre-detail { grid-template-columns: 1fr; }
+}
+
+/* ---------- Événements ---------- */
+.evenement {
+  border-left: none;
+  border-top: 1.5px solid var(--color-ink);
+  padding: 1rem 0;
+  margin-bottom: 0;
+}
+
+.evenement .date {
+  font-weight: 700;
+  color: var(--color-gold);
+  display: block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/* ---------- Zone profs list ---------- */
+.ressource-list {
+  display: grid;
+  gap: 0;
+  border-top: 1.5px solid var(--color-ink);
+}
+
+.ressource-item {
+  border: none;
+  border-bottom: 1.5px solid var(--color-ink);
+  background: transparent;
+  padding: 1.4rem 0;
+}
+
+/* ---------- Contact form ---------- */
+form.contact {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 480px;
+}
+
+form.contact label { font-weight: 600; font-family: 'Bricolage Grotesque', sans-serif; }
+
+form.contact input,
+form.contact textarea {
+  padding: 0.6rem 0.7rem;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--color-bg);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-bg);
+  color: var(--color-ink-soft);
+  border-top: 1.5px solid var(--color-ink);
+  padding: 2.6rem 0;
+  margin-top: 3rem;
+  font-size: 0.92rem;
+}
+
+.site-footer a { color: var(--color-ink); }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.6rem;
+}
+
+.footer-grid h3 {
+  color: var(--color-ink);
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Responsive nav ---------- */
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .site-nav { display: none; width: 100%; }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0.8rem; padding: 1rem 0; }
+  .site-header .wrap { flex-wrap: wrap; }
+}
+
+/* ---------- Accessibilité ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2.5px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
