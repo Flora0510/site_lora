@@ -66,12 +66,6 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-under
   padding-bottom: 1.3rem;
 }
 
-.site-header .logo {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--color-ink);
-}
 
 .site-header .logo {
   display: block;
