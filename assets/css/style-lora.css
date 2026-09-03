@@ -73,6 +73,16 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-under
   color: var(--color-ink);
 }
 
+.site-header .logo {
+  display: block;
+}
+
+.site-header .logo img {
+  display: block;
+  height: 55px;
+  width: auto;
+}
+
 .site-header .logo:hover { text-decoration: none; opacity: 0.75; }
 
 .nav-toggle {
