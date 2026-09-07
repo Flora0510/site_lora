@@ -73,6 +73,8 @@ a:hover { text-decoration: underline; }
   display: block;
   height: 55px;
   width: auto;
+  max-width: 55px;
+  object-fit: contain;
 }
 
 .site-header .logo:hover { text-decoration: none; opacity: 0.9; }
