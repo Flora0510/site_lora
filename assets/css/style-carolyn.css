@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg: #fff7fb;
+  --color-bg-panel: #f7ecfa;
+  --color-bg-panel-2: #fdeaf1;
+  --color-ink: #2e1330;
+  --color-ink-soft: #6c5573;
+  --color-navy: #7a1e4b;        /* framboise profond, réutilisé par le header */
+  --color-navy-deep: #4f1533;   /* framboise très foncé, footer */
+  --color-gold: #9b5de5;        /* mauve, accent secondaire (liens) */
+  --color-gold-soft: #e6d3f7;
+  --color-coral: #d6336c;       /* framboise vif, CTA / accent principal */
+  --border: 2px solid #e9c9e6;
+  --radius-cover: 18px;
+  --max-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fredoka', system-ui, sans-serif;
+  color: var(--color-navy);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.3rem, 4.5vw, 3.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p { max-width: 64ch; color: var(--color-ink-soft); }
+
+a { color: var(--color-coral); text-decoration: none; font-weight: 700; }
+a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  background: var(--color-navy);
+  color: #fff;
+  border-bottom: none;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.site-header .logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.site-header .logo:hover { text-decoration: none; opacity: 0.9; }
+
+.nav-toggle {
+  display: none;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: #f6e2f0;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border-bottom: none;
+  display: inline-block;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-navy);
+  background: #fff;
+  text-decoration: none;
+}
+
+/* Petite bordure à pois plutôt que la vague nautique */
+.wave { display: none; }
+.site-header::after {
+  content: "";
+  display: block;
+  height: 10px;
+  background-image: radial-gradient(circle, var(--color-coral) 3.5px, transparent 3.6px);
+  background-size: 22px 10px;
+  background-position: 4px 0;
+  background-repeat: repeat-x;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--color-navy);
+  color: #fff;
+  padding: 3.8rem 0 5rem;
+  text-align: left;
+}
+
+.hero h1 { color: #fff; max-width: 16ch; }
+.hero p { color: #f6e2f0; font-size: 1.15rem; max-width: 50ch; }
+
+.btn {
+  display: inline-block;
+  background: var(--color-coral);
+  color: #fff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 6px 16px rgba(214, 51, 108, 0.35);
+}
+
+.btn:hover { text-decoration: none; background: #b82459; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+  box-shadow: none;
+}
+
+.btn-outline:hover { background: var(--color-navy); color: #fff; }
+
+/* ---------- Sections ---------- */
+section { padding: 3.2rem 0; }
+section.alt { background: var(--color-bg-panel); }
+
+.eyebrow-free-heading { margin-bottom: 1.6rem; }
+
+/* ---------- Ce qu'on propose : cartes pastel rondes ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+
+.feature-card {
+  border: none;
+  border-radius: 20px;
+  background: var(--color-bg-panel);
+  padding: 1.6rem;
+  box-shadow: 0 4px 14px rgba(122, 30, 75, 0.08);
+}
+
+.feature-card:nth-child(2) { background: var(--color-bg-panel-2); }
+.feature-card:nth-child(3) { background: #eef0fb; }
+
+/* ---------- Book shelf : couvertures rondes, sans rotation ---------- */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 1.8rem 1.3rem;
+}
+
+.book {
+  display: block;
+  color: var(--color-ink);
+}
+
+.book:hover { text-decoration: none; }
+
+.book-cover {
+  border: none;
+  border-radius: var(--radius-cover);
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background: var(--color-bg-panel);
+  box-shadow: 0 6px 16px rgba(122, 30, 75, 0.16);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.book-cover.carre { aspect-ratio: 1 / 1; }
+
+.book:hover .book-cover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(122, 30, 75, 0.24);
+}
+
+.book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.book h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
+  color: var(--color-navy);
+}
+
+.book .achat {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-coral);
+}
+
+/* ---------- Fiche livre ---------- */
+.livre-detail {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .livre-detail { grid-template-columns: 1fr; }
+}
+
+.livre-detail .book-cover:hover { transform: none; }
+
+/* ---------- Événements ---------- */
+.evenement {
+  border-left: 5px solid var(--color-gold);
+  border-radius: 0 14px 14px 0;
+  background: var(--color-bg-panel);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.evenement .date {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  color: var(--color-coral);
+  display: block;
+}
+
+/* ---------- Zone profs list ---------- */
+.ressource-list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.ressource-item {
+  border: none;
+  border-radius: 18px;
+  background: var(--color-bg-panel);
+  padding: 1.3rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(122, 30, 75, 0.08);
+}
+
+/* ---------- Contact form ---------- */
+form.contact {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 480px;
+}
+
+form.contact label { font-weight: 700; font-family: 'Fredoka', sans-serif; color: var(--color-navy); }
+
+form.contact input,
+form.contact textarea {
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--color-gold-soft);
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+
+form.contact input:focus,
+form.contact textarea:focus {
+  border-color: var(--color-coral);
+  outline: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-navy-deep);
+  color: #ecd7e6;
+  padding: 2.6rem 0;
+  margin-top: 3rem;
+  font-size: 0.92rem;
+}
+
+.site-footer a { color: #fff; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.6rem;
+}
+
+.footer-grid h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: #f2c9e6;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Responsive nav ---------- */
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .site-nav { display: none; width: 100%; }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0.5rem; padding: 1rem 0; }
+  .site-nav a { display: block; }
+  .site-header .wrap { flex-wrap: wrap; }
+}
+
+/* ---------- Accessibilité ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
