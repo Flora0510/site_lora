@@ -122,10 +122,10 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 .site-header::after {
   content: "";
   display: block;
-  height: 10px;
+  height: 26px;
   background-image: radial-gradient(circle, var(--color-coral) 3.5px, transparent 3.6px);
-  background-size: 22px 10px;
-  background-position: 4px 0;
+  background-size: 22px 14px;
+  background-position: 4px center;
   background-repeat: repeat-x;
 }
 
