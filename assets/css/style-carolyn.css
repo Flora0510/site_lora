@@ -8,7 +8,7 @@
   --color-ink-soft: #6c5573;
   --color-navy: #7a1e4b;        /* framboise profond, réutilisé par le header */
   --color-navy-deep: #4f1533;   /* framboise très foncé, footer */
-  --color-gold: #9b5de5;        /* mauve, accent secondaire (liens) */
+  --color-gold: #d6336c;        /* mauve, accent secondaire (liens) */
   --color-gold-soft: #e6d3f7;
   --color-coral: #d6336c;       /* framboise vif, CTA / accent principal */
   --border: 2px solid #e9c9e6;
@@ -184,7 +184,9 @@ section.alt { background: var(--color-bg-panel); }
 }
 
 .feature-card:nth-child(2) { background: var(--color-bg-panel-2); }
-.feature-card:nth-child(3) { background: #eef0fb; }
+
+.feature-card:nth-child(4) { background: var(--color-bg-panel-2); }
+
 
 /* ---------- Book shelf : couvertures rondes, sans rotation ---------- */
 .shelf {
