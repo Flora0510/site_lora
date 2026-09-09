@@ -352,3 +352,84 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- Accordéon (guide de solutions, etc.) ---------- */
+.accordion { margin-top: 1.5rem; display: grid; gap: 0.8rem; }
+.accordion-item {
+  border: none;
+  border-radius: 16px;
+  background: var(--color-bg-panel);
+  box-shadow: 0 4px 14px rgba(122, 30, 75, 0.08);
+  overflow: hidden;
+}
+.accordion-item summary {
+  cursor: pointer;
+  padding: 1rem 1.3rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: var(--color-navy);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.accordion-item summary::-webkit-details-marker { display: none; }
+.accordion-item summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--color-coral);
+  border-bottom: 2px solid var(--color-coral);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.accordion-item[open] summary::after { transform: rotate(-135deg); }
+.accordion-content { padding: 0 1.3rem 1.3rem; }
+.accordion-content img { max-width: 100%; border-radius: 12px; margin: 0.5rem 0; }
+
+/* ---------- Texte pleine largeur (ex. pages ressource avec contenu riche) ---------- */
+.texte-large p { max-width: none; }
+
+/* ---------- Bloc autrice : photo + texte superposé ---------- */
+.auteure-bloc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 3rem 0;
+}
+.auteure-photo { grid-column: 1; grid-row: 1; }
+.auteure-photo img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.auteure-texte {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  margin-left: -3.5rem;
+  background: var(--color-bg-panel);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(122, 30, 75, 0.14);
+  padding: 2rem;
+}
+.auteure-bloc--inverse .auteure-photo { grid-column: 2; }
+.auteure-bloc--inverse .auteure-texte {
+  grid-column: 1;
+  margin-left: 0;
+  margin-right: -3.5rem;
+}
+@media (max-width: 720px) {
+  .auteure-bloc, .auteure-bloc--inverse { grid-template-columns: 1fr; }
+  .auteure-bloc .auteure-photo, .auteure-bloc--inverse .auteure-photo { grid-column: 1; grid-row: 1; }
+  .auteure-bloc .auteure-texte, .auteure-bloc--inverse .auteure-texte {
+    grid-column: 1;
+    grid-row: 2;
+    margin: -2.5rem 1.2rem 0;
+  }
+}

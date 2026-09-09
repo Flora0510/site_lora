@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap');
 
 :root {
-  --color-bg: #f7f5ef;
-  --color-bg-panel: #f1efe6;
-  --color-ink: #16140f;
-  --color-ink-soft: #57544a;
-  --color-navy: #16140f;       /* réutilisé par les templates existants */
-  --color-navy-deep: #16140f;
-  --color-gold: #2f6d5d;       /* seul accent du site */
-  --color-gold-soft: #cfe0d9;
-  --color-coral: #2f6d5d;
-  --border: 1.5px solid var(--color-ink);
-  --radius-cover: 0px;
+  --color-bg: #fff7fb;
+  --color-bg-panel: #f7ecfa;
+  --color-bg-panel-2: #fdeaf1;
+  --color-ink: #2e1330;
+  --color-ink-soft: #6c5573;
+  --color-navy: #7a1e4b;        /* framboise profond, réutilisé par le header */
+  --color-navy-deep: #4f1533;   /* framboise très foncé, footer */
+  --color-gold: #d6336c;        /* mauve, accent secondaire (liens) */
+  --color-gold-soft: #e6d3f7;
+  --color-coral: #d6336c;       /* framboise vif, CTA / accent principal */
+  --border: 2px solid #e9c9e6;
+  --radius-cover: 18px;
   --max-width: 1120px;
 }
 
@@ -23,27 +24,26 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-ink);
-  font-family: 'Public Sans', system-ui, sans-serif;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.6;
 }
 
 h1, h2, h3, .display {
-  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-  color: var(--color-ink);
-  line-height: 1.05;
+  font-family: 'Fredoka', system-ui, sans-serif;
+  color: var(--color-navy);
+  line-height: 1.15;
   margin: 0 0 0.5em;
-  letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 700; }
-h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 600; }
+h1 { font-size: clamp(2.3rem, 4.5vw, 3.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 600; }
 h3 { font-size: 1.2rem; font-weight: 600; }
 
-p { max-width: 62ch; color: var(--color-ink-soft); }
+p { max-width: 64ch; color: var(--color-ink-soft); }
 
-a { color: var(--color-gold); text-decoration: none; }
-a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a { color: var(--color-coral); text-decoration: none; font-weight: 700; }
+a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 
 .wrap {
   max-width: var(--max-width);
@@ -53,128 +53,146 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-under
 
 /* ---------- Header / nav ---------- */
 .site-header {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  border-bottom: 1.5px solid var(--color-ink);
+  background: var(--color-navy);
+  color: #fff;
+  border-bottom: none;
 }
 
 .site-header .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.3rem;
-  padding-bottom: 1.3rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
 }
-
 
 .site-header .logo {
   display: block;
+  width: auto;
 }
 
 .site-header .logo img {
   display: block;
   height: 55px;
   width: auto;
+  max-width: 55px;
+  object-fit: contain;
 }
 
-.site-header .logo:hover { text-decoration: none; opacity: 0.75; }
+.site-header .logo:hover { text-decoration: none; opacity: 0.9; }
 
 .nav-toggle {
   display: none;
-  background: none;
-  border: 1.5px solid var(--color-ink);
-  color: var(--color-ink);
-  font-size: 0.95rem;
-  padding: 0.4rem 0.7rem;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
   cursor: pointer;
 }
 
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 0.4rem;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
 }
 
 .site-nav a {
-  color: var(--color-ink-soft);
-  font-weight: 500;
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
+  color: #f6e2f0;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border-bottom: none;
+  display: inline-block;
 }
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--color-ink);
-  border-bottom-color: var(--color-gold);
+  color: var(--color-navy);
+  background: #fff;
   text-decoration: none;
 }
 
-/* Pas de vague nautique ici : diviseur discret uniquement */
+/* Petite bordure à pois plutôt que la vague nautique */
 .wave { display: none; }
+.site-header::after {
+  content: "";
+  display: block;
+  height: 26px;
+  background-image: radial-gradient(circle, var(--color-coral) 3.5px, transparent 3.6px);
+  background-size: 22px 14px;
+  background-position: 4px center;
+  background-repeat: repeat-x;
+}
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  padding: 4.5rem 0 5rem;
+  background: var(--color-navy);
+  color: #fff;
+  padding: 3.8rem 0 5rem;
   text-align: left;
 }
 
-.hero h1 { color: var(--color-ink); max-width: 14ch; }
-.hero p { color: var(--color-ink-soft); font-size: 1.2rem; max-width: 48ch; }
+.hero h1 { color: #fff; max-width: 16ch; }
+.hero p { color: #f6e2f0; font-size: 1.15rem; max-width: 50ch; }
 
 .btn {
   display: inline-block;
-  background: var(--color-ink);
-  color: var(--color-bg);
-  padding: 0.7rem 1.3rem;
-  border-radius: 0;
-  font-weight: 600;
-  border: 1.5px solid var(--color-ink);
+  background: var(--color-coral);
+  color: #fff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 6px 16px rgba(214, 51, 108, 0.35);
 }
 
-.btn:hover { text-decoration: none; background: var(--color-gold); border-color: var(--color-gold); }
+.btn:hover { text-decoration: none; background: #b82459; }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-ink);
-  border: 1.5px solid var(--color-ink);
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+  box-shadow: none;
 }
 
-.btn-outline:hover { background: var(--color-ink); color: var(--color-bg); }
+.btn-outline:hover { background: var(--color-navy); color: #fff; }
 
 /* ---------- Sections ---------- */
 section { padding: 3.2rem 0; }
 section.alt { background: var(--color-bg-panel); }
 
-.eyebrow-free-heading { margin-bottom: 1.8rem; }
+.eyebrow-free-heading { margin-bottom: 1.6rem; }
 
-/* ---------- Ce qu'on propose : liste sobre plutôt que cartes ---------- */
+/* ---------- Ce qu'on propose : cartes pastel rondes ---------- */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0;
-  border-top: 1.5px solid var(--color-ink);
+  gap: 1.4rem;
 }
 
 .feature-card {
   border: none;
-  border-bottom: 1.5px solid var(--color-ink);
-  border-right: 1.5px solid var(--color-ink);
-  background: transparent;
-  padding: 1.6rem 1.4rem;
+  border-radius: 20px;
+  background: var(--color-bg-panel);
+  padding: 1.6rem;
+  box-shadow: 0 4px 14px rgba(122, 30, 75, 0.08);
 }
 
-.feature-card:last-child { border-right: none; }
+.feature-card:nth-child(2) { background: var(--color-bg-panel-2); }
 
-/* ---------- Book shelf : grille sobre, sans rotation ---------- */
+.feature-card:nth-child(4) { background: var(--color-bg-panel-2); }
+
+
+/* ---------- Book shelf : couvertures rondes, sans rotation ---------- */
 .shelf {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 2rem 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 1.8rem 1.3rem;
 }
 
 .book {
@@ -185,38 +203,43 @@ section.alt { background: var(--color-bg-panel); }
 .book:hover { text-decoration: none; }
 
 .book-cover {
-  border: 1.5px solid var(--color-ink);
-  border-radius: 0;
+  border: none;
+  border-radius: var(--radius-cover);
   overflow: hidden;
   aspect-ratio: 2 / 3;
   background: var(--color-bg-panel);
-  transition: opacity 0.15s ease;
+  box-shadow: 0 6px 16px rgba(122, 30, 75, 0.16);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .book-cover.carre { aspect-ratio: 1 / 1; }
 
-.book:hover .book-cover { opacity: 0.85; }
+.book:hover .book-cover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(122, 30, 75, 0.24);
+}
 
 .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .book h3 {
+  font-family: 'Fredoka', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   margin-top: 0.7rem;
-  color: var(--color-ink);
+  color: var(--color-navy);
 }
 
 .book .achat {
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-gold);
+  font-weight: 700;
+  color: var(--color-coral);
 }
 
 /* ---------- Fiche livre ---------- */
 .livre-detail {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 3rem;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -224,33 +247,36 @@ section.alt { background: var(--color-bg-panel); }
   .livre-detail { grid-template-columns: 1fr; }
 }
 
+.livre-detail .book-cover:hover { transform: none; }
+
 /* ---------- Événements ---------- */
 .evenement {
-  border-left: none;
-  border-top: 1.5px solid var(--color-ink);
-  padding: 1rem 0;
-  margin-bottom: 0;
+  border-left: 5px solid var(--color-gold);
+  border-radius: 0 14px 14px 0;
+  background: var(--color-bg-panel);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .evenement .date {
+  font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--color-coral);
   display: block;
-  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 /* ---------- Zone profs list ---------- */
 .ressource-list {
   display: grid;
-  gap: 0;
-  border-top: 1.5px solid var(--color-ink);
+  gap: 1.1rem;
 }
 
 .ressource-item {
   border: none;
-  border-bottom: 1.5px solid var(--color-ink);
-  background: transparent;
-  padding: 1.4rem 0;
+  border-radius: 18px;
+  background: var(--color-bg-panel);
+  padding: 1.3rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(122, 30, 75, 0.08);
 }
 
 /* ---------- Contact form ---------- */
@@ -260,29 +286,34 @@ form.contact {
   max-width: 480px;
 }
 
-form.contact label { font-weight: 600; font-family: 'Bricolage Grotesque', sans-serif; }
+form.contact label { font-weight: 700; font-family: 'Fredoka', sans-serif; color: var(--color-navy); }
 
 form.contact input,
 form.contact textarea {
-  padding: 0.6rem 0.7rem;
-  border: 1.5px solid var(--color-ink);
-  border-radius: 0;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--color-gold-soft);
+  border-radius: 14px;
   font-family: inherit;
   font-size: 1rem;
-  background: var(--color-bg);
+  background: #fff;
+}
+
+form.contact input:focus,
+form.contact textarea:focus {
+  border-color: var(--color-coral);
+  outline: none;
 }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--color-bg);
-  color: var(--color-ink-soft);
-  border-top: 1.5px solid var(--color-ink);
+  background: var(--color-navy-deep);
+  color: #ecd7e6;
   padding: 2.6rem 0;
   margin-top: 3rem;
   font-size: 0.92rem;
 }
 
-.site-footer a { color: var(--color-ink); }
+.site-footer a { color: #fff; }
 
 .footer-grid {
   display: grid;
@@ -291,7 +322,8 @@ form.contact textarea {
 }
 
 .footer-grid h3 {
-  color: var(--color-ink);
+  font-family: 'Fredoka', sans-serif;
+  color: #f2c9e6;
   font-size: 0.95rem;
 }
 
@@ -306,16 +338,98 @@ form.contact textarea {
   .nav-toggle { display: inline-block; }
   .site-nav { display: none; width: 100%; }
   .site-nav.open { display: block; }
-  .site-nav ul { flex-direction: column; gap: 0.8rem; padding: 1rem 0; }
+  .site-nav ul { flex-direction: column; gap: 0.5rem; padding: 1rem 0; }
+  .site-nav a { display: block; }
   .site-header .wrap { flex-wrap: wrap; }
 }
 
 /* ---------- Accessibilité ---------- */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 2.5px solid var(--color-gold);
+  outline: 3px solid var(--color-coral);
   outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Accordéon (guide de solutions, etc.) ---------- */
+.accordion { margin-top: 1.5rem; display: grid; gap: 0.8rem; }
+.accordion-item {
+  border: none;
+  border-radius: 16px;
+  background: var(--color-bg-panel);
+  box-shadow: 0 4px 14px rgba(122, 30, 75, 0.08);
+  overflow: hidden;
+}
+.accordion-item summary {
+  cursor: pointer;
+  padding: 1rem 1.3rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: var(--color-navy);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.accordion-item summary::-webkit-details-marker { display: none; }
+.accordion-item summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--color-coral);
+  border-bottom: 2px solid var(--color-coral);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.accordion-item[open] summary::after { transform: rotate(-135deg); }
+.accordion-content { padding: 0 1.3rem 1.3rem; }
+.accordion-content img { max-width: 100%; border-radius: 12px; margin: 0.5rem 0; }
+
+/* ---------- Texte pleine largeur (ex. pages ressource avec contenu riche) ---------- */
+.texte-large p { max-width: none; }
+
+/* ---------- Bloc autrice : photo + texte superposé ---------- */
+.auteure-bloc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 3rem 0;
+}
+.auteure-photo { grid-column: 1; grid-row: 1; }
+.auteure-photo img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.auteure-texte {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  margin-left: -3.5rem;
+  background: var(--color-bg-panel);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(122, 30, 75, 0.14);
+  padding: 2rem;
+}
+.auteure-bloc--inverse .auteure-photo { grid-column: 2; }
+.auteure-bloc--inverse .auteure-texte {
+  grid-column: 1;
+  margin-left: 0;
+  margin-right: -3.5rem;
+}
+@media (max-width: 720px) {
+  .auteure-bloc, .auteure-bloc--inverse { grid-template-columns: 1fr; }
+  .auteure-bloc .auteure-photo, .auteure-bloc--inverse .auteure-photo { grid-column: 1; grid-row: 1; }
+  .auteure-bloc .auteure-texte, .auteure-bloc--inverse .auteure-texte {
+    grid-column: 1;
+    grid-row: 2;
+    margin: -2.5rem 1.2rem 0;
+  }
 }
