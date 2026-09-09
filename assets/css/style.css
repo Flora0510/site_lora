@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-bg: #f7f5ef;
-  --color-bg-panel: #f1efe6;
-  --color-ink: #16140f;
-  --color-ink-soft: #57544a;
-  --color-navy: #16140f;       /* réutilisé par les templates existants */
-  --color-navy-deep: #16140f;
-  --color-gold: #2f6d5d;       /* seul accent du site */
-  --color-gold-soft: #cfe0d9;
-  --color-coral: #2f6d5d;
-  --border: 1.5px solid var(--color-ink);
-  --radius-cover: 0px;
+  --color-bg: #070749;
+  --color-bg-panel: #070749;
+  --color-ink: #fdfbf7;
+  --color-ink-soft: #fdfbf7;
+  --color-navy: #070749;
+  --color-navy-deep: #fdfbf7;
+  --color-gold: #17bcd4;
+  --color-gold-soft: #17bcd4;
+  --color-coral: #17bcd4;
+  --border: 2px solid var(--color-ink);
+  --radius-cover: 3px;
   --max-width: 1120px;
 }
 
@@ -23,27 +23,26 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-ink);
-  font-family: 'Public Sans', system-ui, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 h1, h2, h3, .display {
-  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-  color: var(--color-ink);
-  line-height: 1.05;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-navy-deep);
+  line-height: 1.15;
   margin: 0 0 0.5em;
-  letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 700; }
-h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 600; }
-h3 { font-size: 1.2rem; font-weight: 600; }
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 600; }
+h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
 
-p { max-width: 62ch; color: var(--color-ink-soft); }
+p { max-width: 68ch; }
 
-a { color: var(--color-gold); text-decoration: none; }
-a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a { color: var(--color-coral); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .wrap {
   max-width: var(--max-width);
@@ -53,19 +52,18 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-under
 
 /* ---------- Header / nav ---------- */
 .site-header {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  border-bottom: 1.5px solid var(--color-ink);
+  background: var(--color-navy);
+  color: #fff;
+  border-bottom: 4px solid var(--color-gold);
 }
 
 .site-header .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.3rem;
-  padding-bottom: 1.3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-
 
 .site-header .logo {
   display: block;
@@ -75,31 +73,34 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-under
   display: block;
   height: 55px;
   width: auto;
+  max-width: 55px;
+  object-fit: contain;
 }
 
-.site-header .logo:hover { text-decoration: none; opacity: 0.75; }
+.site-header .logo:hover { text-decoration: none; opacity: 0.9; }
 
 .nav-toggle {
   display: none;
   background: none;
-  border: 1.5px solid var(--color-ink);
-  color: var(--color-ink);
-  font-size: 0.95rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
   padding: 0.4rem 0.7rem;
+  border-radius: 3px;
   cursor: pointer;
 }
 
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
 }
 
 .site-nav a {
-  color: var(--color-ink-soft);
+  color: #eee;
   font-weight: 500;
   padding-bottom: 3px;
   border-bottom: 2px solid transparent;
@@ -107,74 +108,79 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-under
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--color-ink);
+  color: #fff;
   border-bottom-color: var(--color-gold);
   text-decoration: none;
 }
 
-/* Pas de vague nautique ici : diviseur discret uniquement */
-.wave { display: none; }
+/* ---------- Wave divider ---------- */
+.wave {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: -1px;
+}
 
 /* ---------- Hero ---------- */
 .hero {
   background: var(--color-bg);
-  color: var(--color-ink);
-  padding: 4.5rem 0 5rem;
+  color: #fff;
+  padding: 3.5rem 0 4.5rem;
   text-align: left;
 }
 
-.hero h1 { color: var(--color-ink); max-width: 14ch; }
-.hero p { color: var(--color-ink-soft); font-size: 1.2rem; max-width: 48ch; }
+.hero h1 { color: #fff; max-width: 18ch; }
+.hero p { color: #dfe6ee; font-size: 1.15rem; max-width: 52ch; }
 
 .btn {
   display: inline-block;
-  background: var(--color-ink);
-  color: var(--color-bg);
-  padding: 0.7rem 1.3rem;
-  border-radius: 0;
-  font-weight: 600;
-  border: 1.5px solid var(--color-ink);
+  background: var(--color-coral);
+  color: #fff;
+  padding: 0.75rem 1.4rem;
+  border-radius: 3px;
+  font-weight: 700;
+  border: var(--border);
+  border-color: var(--color-coral);
 }
 
-.btn:hover { text-decoration: none; background: var(--color-gold); border-color: var(--color-gold); }
+.btn:hover { text-decoration: none; background: #a6431f; }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-ink);
-  border: 1.5px solid var(--color-ink);
+  color: var(--color-navy-deep);
+  border: var(--border);
 }
 
-.btn-outline:hover { background: var(--color-ink); color: var(--color-bg); }
+.btn-outline:hover { background: var(--color-navy-deep); color: #fff; }
 
 /* ---------- Sections ---------- */
-section { padding: 3.2rem 0; }
+section { padding: 3rem 0; }
 section.alt { background: var(--color-bg-panel); }
 
-.eyebrow-free-heading { margin-bottom: 1.8rem; }
+.eyebrow-free-heading { margin-bottom: 1.5rem; }
 
-/* ---------- Ce qu'on propose : liste sobre plutôt que cartes ---------- */
+/* ---------- Cards (mises en avant) ---------- */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0;
-  border-top: 1.5px solid var(--color-ink);
+  gap: 1.5rem;
 }
 
 .feature-card {
-  border: none;
-  border-bottom: 1.5px solid var(--color-ink);
-  border-right: 1.5px solid var(--color-ink);
-  background: transparent;
-  padding: 1.6rem 1.4rem;
+  border: var(--border);
+  background: var(--color-bg-panel);
+  padding: 1.4rem;
+  border-top: 6px solid var(--color-gold);
 }
 
-.feature-card:last-child { border-right: none; }
+.feature-card:nth-child(2) { border-top-color: var(--color-coral); }
+.feature-card:nth-child(3) { border-top-color: var(--color-coral); }
 
-/* ---------- Book shelf : grille sobre, sans rotation ---------- */
+/* ---------- Book shelf ---------- */
 .shelf {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 2rem 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.8rem 1.4rem;
 }
 
 .book {
@@ -185,38 +191,41 @@ section.alt { background: var(--color-bg-panel); }
 .book:hover { text-decoration: none; }
 
 .book-cover {
-  border: 1.5px solid var(--color-ink);
-  border-radius: 0;
+  border: var(--border);
+  border-radius: var(--radius-cover);
   overflow: hidden;
   aspect-ratio: 2 / 3;
-  background: var(--color-bg-panel);
-  transition: opacity 0.15s ease;
+  background: var(--color-gold-soft);
+  transition: transform 0.15s ease;
 }
 
-.book-cover.carre { aspect-ratio: 1 / 1; }
+.book-cover.carre {
+  aspect-ratio: 1 / 1;
+}
 
-.book:hover .book-cover { opacity: 0.85; }
+.book:nth-child(odd) .book-cover { transform: rotate(-1.2deg); }
+.book:nth-child(even) .book-cover { transform: rotate(1.2deg); }
+.book:hover .book-cover { transform: rotate(0deg) translateY(-3px); }
 
 .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .book h3 {
   font-size: 1rem;
-  font-weight: 600;
-  margin-top: 0.7rem;
+  margin-top: 0.6rem;
   color: var(--color-ink);
 }
 
 .book .achat {
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-gold);
+  font-weight: 700;
+  color: var(--color-coral);
 }
 
 /* ---------- Fiche livre ---------- */
 .livre-detail {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 3rem;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -224,65 +233,62 @@ section.alt { background: var(--color-bg-panel); }
   .livre-detail { grid-template-columns: 1fr; }
 }
 
+.livre-detail .book-cover { transform: none; }
+
 /* ---------- Événements ---------- */
 .evenement {
-  border-left: none;
-  border-top: 1.5px solid var(--color-ink);
-  padding: 1rem 0;
-  margin-bottom: 0;
+  border-left: 4px solid var(--color-gold);
+  padding: 0.6rem 0 0.6rem 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .evenement .date {
   font-weight: 700;
   color: var(--color-gold);
   display: block;
-  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 /* ---------- Zone profs list ---------- */
 .ressource-list {
   display: grid;
-  gap: 0;
-  border-top: 1.5px solid var(--color-ink);
+  gap: 1.2rem;
 }
 
 .ressource-item {
-  border: none;
-  border-bottom: 1.5px solid var(--color-ink);
-  background: transparent;
-  padding: 1.4rem 0;
+  border: var(--border);
+  background: var(--color-bg-panel);
+  padding: 1.2rem 1.4rem;
 }
 
 /* ---------- Contact form ---------- */
 form.contact {
   display: grid;
-  gap: 1.1rem;
+  gap: 1rem;
   max-width: 480px;
 }
 
-form.contact label { font-weight: 600; font-family: 'Bricolage Grotesque', sans-serif; }
+form.contact label { font-weight: 700; }
 
 form.contact input,
 form.contact textarea {
   padding: 0.6rem 0.7rem;
-  border: 1.5px solid var(--color-ink);
-  border-radius: 0;
+  border: var(--border);
+  border-radius: 3px;
   font-family: inherit;
   font-size: 1rem;
-  background: var(--color-bg);
+  background: var(--color-bg-panel);
 }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--color-bg);
-  color: var(--color-ink-soft);
-  border-top: 1.5px solid var(--color-ink);
-  padding: 2.6rem 0;
+  background: var(--color-navy);
+  color: #d9dfe6;
+  padding: 2.5rem 0;
   margin-top: 3rem;
   font-size: 0.92rem;
 }
 
-.site-footer a { color: var(--color-ink); }
+.site-footer a { color: #fff; }
 
 .footer-grid {
   display: grid;
@@ -291,14 +297,19 @@ form.contact textarea {
 }
 
 .footer-grid h3 {
-  color: var(--color-ink);
+  color: var(--color-gold-soft);
   font-size: 0.95rem;
+  text-transform: none;
 }
 
 .social-links {
   display: flex;
   gap: 1rem;
   margin-top: 0.5rem;
+}
+
+.social-links + h3 {
+  margin-top: 1.5rem;
 }
 
 /* ---------- Responsive nav ---------- */
@@ -312,7 +323,7 @@ form.contact textarea {
 
 /* ---------- Accessibilité ---------- */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 2.5px solid var(--color-gold);
+  outline: 3px solid var(--color-gold);
   outline-offset: 2px;
 }
 
@@ -321,14 +332,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ---------- Accordéon (guide de solutions, etc.) ---------- */
-.accordion { margin-top: 1.5rem; border-top: 1.5px solid var(--color-ink); }
-.accordion-item { border-bottom: 1.5px solid var(--color-ink); }
+.accordion { margin-top: 1.5rem; display: grid; gap: 1rem; }
+.accordion-item {
+  border: var(--border);
+  background: var(--color-bg-panel);
+}
 .accordion-item summary {
   cursor: pointer;
-  padding: 1rem 0;
-  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 1.1rem 1.4rem;
+  font-family: 'Fraunces', Georgia, serif;
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-navy-deep);
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -339,16 +353,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .accordion-item summary::after {
   content: "";
   flex-shrink: 0;
-  width: 9px;
-  height: 9px;
-  border-right: 1.5px solid var(--color-gold);
-  border-bottom: 1.5px solid var(--color-gold);
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
   transform: rotate(45deg);
   transition: transform 0.15s ease;
 }
 .accordion-item[open] summary::after { transform: rotate(-135deg); }
-.accordion-content { padding: 0 0 1.2rem; }
-.accordion-content img { max-width: 100%; border: 1.5px solid var(--color-ink); margin: 0.5rem 0; }
+.accordion-content { padding: 0 1.4rem 1.4rem; border-top: var(--border); padding-top: 1rem; }
+.accordion-content img { max-width: 100%; border: var(--border); margin: 0.5rem 0; }
 
 /* ---------- Texte pleine largeur (ex. pages ressource avec contenu riche) ---------- */
 .texte-large p { max-width: none; }
@@ -360,13 +374,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   align-items: center;
   margin: 3rem 0;
 }
-.auteure-photo { grid-column: 1; grid-row: 1; }
+.auteure-photo {
+  grid-column: 1;
+  grid-row: 1;
+}
 .auteure-photo img {
   width: 100%;
   display: block;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border: 1.5px solid var(--color-ink);
+  border: var(--border);
 }
 .auteure-texte {
   grid-column: 2;
@@ -374,8 +391,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: relative;
   z-index: 2;
   margin-left: -3.5rem;
-  background: var(--color-bg);
-  border: 1.5px solid var(--color-ink);
+  background: var(--color-bg-panel);
+  border: var(--border);
   padding: 2rem;
 }
 .auteure-bloc--inverse .auteure-photo { grid-column: 2; }
@@ -392,4 +409,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     grid-row: 2;
     margin: -2.5rem 1.2rem 0;
   }
+}
+
+/* ---------- Séparateur à petits points ---------- */
+.separateur-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0;
+}
+.separateur-points span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  display: block;
 }

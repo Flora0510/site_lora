@@ -433,3 +433,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     margin: -2.5rem 1.2rem 0;
   }
 }
+
+/* ---------- Séparateur à petits points ---------- */
+.separateur-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0;
+}
+.separateur-points span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-coral);
+  display: block;
+}
