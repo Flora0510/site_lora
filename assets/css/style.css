@@ -450,3 +450,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .animation-card-livre-cover.carre { aspect-ratio: 1 / 1; }
 .animation-card-livre-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---------- Icônes des réseaux sociaux (footer) ---------- */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.social-links a:hover { background: var(--color-gold); color: var(--color-navy-deep); }
