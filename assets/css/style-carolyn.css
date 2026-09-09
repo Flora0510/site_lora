@@ -486,3 +486,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: #fff;
 }
 .social-links a:hover { background: #fff; color: var(--color-navy); }
+
+/* ---------- Navigation du footer sur 2 colonnes ---------- */
+.footer-nav-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.2rem;
+}
+.footer-nav-columns p { margin: 0; }

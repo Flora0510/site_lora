@@ -18,11 +18,11 @@
       <ul>
         <li><a href="/" >Accueil</a></li>
         <li><a href="/livres/" >Livres</a></li>
-        
         <li><a href="/animations/">Animations</a></li>
         <li><a href="/evenements/">Événements</a></li>
         <li><a href="/a-propos/">À propos</a></li>
         <li><a href="/zone-profs/">Zone profs</a></li>
+        <li><a href="/zone-biblio/">Zone biblio</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav>
@@ -36,7 +36,7 @@
 
   <main>
     <article class="wrap" style="padding: 3rem 0; max-width: 760px;">
-  <p><a href="/animations/">← Retour aux animations</a></p>
+  <p><a href="/animations/" onclick="if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) { history.back(); return false; }">← Retour</a></p>
 
 
 
@@ -268,26 +268,27 @@ Princesse Sofia
   <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <h3>Lora Boisvert, autrice</h3>
-    </div>
-    <div>
       <h3>Navigation</h3>
-      <p>
-        <a href="/">Accueil</a><br>
-        <a href="/livres/">Livres</a><br>
-        
-        <a href="/animations/">Animations</a><br>
-        <a href="/evenements/">Événements</a><br>
-        <a href="/a-propos/">À propos</a><br>
-        <a href="/zone-profs/">Zone profs</a><br>
-        <a href="/contact/">Contact</a>
-      </p>
+      <nav class="footer-nav-columns" aria-label="Navigation du site">
+        <p>
+          <a href="/">Accueil</a><br>
+          <a href="/livres/">Livres</a><br>
+          <a href="/animations/">Animations</a><br>
+          <a href="/zone-biblio/">Zone biblio</a>
+        </p>
+        <p>
+          <a href="/evenements/">Événements</a><br>
+          <a href="/a-propos/">À propos</a><br>
+          <a href="/zone-profs/">Zone profs</a><br>
+          <a href="/contact/">Contact</a>
+        </p>
+      </nav>
     </div>
     <div>
-      <h3>Réseaux sociaux</h3>
-      <div class="social-links">
+      <h3>Suivez-nous</h3>
+      
         
-          
+        <div class="social-links">
           
 
 <a href="https://www.facebook.com/loraboisvertauteure" target="_blank" rel="noopener" aria-label="Facebook de Lora Boisvert">
@@ -301,8 +302,8 @@ Princesse Sofia
 </a>
 
 
-        
-      </div>
+        </div>
+      
     </div>
   </div>
   <div class="wrap" style="margin-top:2rem; font-size:0.85rem; color:#9aa6b3;">

@@ -18,11 +18,11 @@
       <ul>
         <li><a href="/" >Accueil</a></li>
         <li><a href="/livres/" >Livres</a></li>
-        
         <li><a href="/animations/">Animations</a></li>
         <li><a href="/evenements/">Événements</a></li>
         <li><a href="/a-propos/">À propos</a></li>
         <li><a href="/zone-profs/">Zone profs</a></li>
+        <li><a href="/zone-biblio/">Zone biblio</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav>
@@ -36,7 +36,7 @@
 
   <main>
     <article class="wrap texte-large" style="padding: 3rem 0; max-width: 800px;">
-  <p><a href="/zone-profs/">← Retour à la Zone profs</a></p>
+  <p><a href="/zone-profs/" onclick="if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) { history.back(); return false; }">← Retour</a></p>
   <h1>Jeu d'évasion littéraire - Aventuriers des mers</h1>
   <p>Bonjour les enseignants, au bas de cette page, vous trouverez la solution au jeu d'évasion littéraire Aventuriers des mers, un concept original que j'ai développé pour enrichir l'expérience de lecture autour du roman. Créé en collaboration avec Lora Boisvert, enseignante en multimédia et auteure jeunesse, ce roman contient une expérience immersive. C'est pourquoi je vous invite à télécharger l'application Les Éditions AppLit à partir du Google Play Store ou de l'App Store sur une tablette que vous mettrez à la disposition des élèves. Le lecteur doit d'abord sélectionner l'onglet Aventuriers des mers 1 sur l'application.</p>
 
@@ -123,22 +123,24 @@
 
 
   
-    
-    
     <section style="margin-top: 3rem;">
       <h2>Roman lié à l'activité</h2>
-      <div class="livre-detail">
-        <div class="book-cover carre" style="max-width: 220px;">
-          <img src="/assets/images/livres/aventuriers-des-mers-1.jpg" alt="Couverture de Aventuriers des mers 1">
+      
+        
+        
+        <div class="livre-detail" style="margin-top: 1.5rem;">
+          <div class="book-cover carre" style="max-width: 220px;">
+            <img src="/assets/images/livres/aventuriers-des-mers-1.jpg" alt="Couverture de Aventuriers des mers 1">
+          </div>
+          <div>
+            <h3>Aventuriers des mers 1</h3>
+            <div>Prisonnier sur une île légendaire portant le nom de Libertalia, William doit amasser 400 doublons d’or afin d’acheter sa liberté. Mais voilà qu’il entend parler du célèbre pirate La Buse. Avant de mourir, ce bandit des mers aurait lancé dans la foule un mystérieux message codé que personne n’a réussi à déchiffrer jusqu’à maintenant. William parviendra-t-il à résoudre cette énigme...</div>
+            <p><a class="btn" href="/livres/aventuriers-des-mers/">Voir le livre →</a></p>
+          </div>
         </div>
-        <div>
-          <h3>Aventuriers des mers 1</h3>
-          <div>Prisonnier sur une île légendaire portant le nom de Libertalia, William doit amasser 400 doublons d’or afin d’acheter sa liberté. Mais voilà qu’il entend parler du célèbre pirate La Buse. Avant de mourir, ce bandit des mers aurait lancé dans la foule un mystérieux message codé que personne n’a réussi à déchiffrer jusqu’à maintenant. William parviendra-t-il à résoudre cette énigme...</div>
-          <p><a class="btn" href="/livres/aventuriers-des-mers/">Voir le livre →</a></p>
-        </div>
-      </div>
+        
+      
     </section>
-    
   
 </article>
   </main>
@@ -146,26 +148,27 @@
   <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <h3>Lora Boisvert, autrice</h3>
-    </div>
-    <div>
       <h3>Navigation</h3>
-      <p>
-        <a href="/">Accueil</a><br>
-        <a href="/livres/">Livres</a><br>
-        
-        <a href="/animations/">Animations</a><br>
-        <a href="/evenements/">Événements</a><br>
-        <a href="/a-propos/">À propos</a><br>
-        <a href="/zone-profs/">Zone profs</a><br>
-        <a href="/contact/">Contact</a>
-      </p>
+      <nav class="footer-nav-columns" aria-label="Navigation du site">
+        <p>
+          <a href="/">Accueil</a><br>
+          <a href="/livres/">Livres</a><br>
+          <a href="/animations/">Animations</a><br>
+          <a href="/zone-biblio/">Zone biblio</a>
+        </p>
+        <p>
+          <a href="/evenements/">Événements</a><br>
+          <a href="/a-propos/">À propos</a><br>
+          <a href="/zone-profs/">Zone profs</a><br>
+          <a href="/contact/">Contact</a>
+        </p>
+      </nav>
     </div>
     <div>
-      <h3>Réseaux sociaux</h3>
-      <div class="social-links">
+      <h3>Suivez-nous</h3>
+      
         
-          
+        <div class="social-links">
           
 
 <a href="https://www.facebook.com/loraboisvertauteure" target="_blank" rel="noopener" aria-label="Facebook de Lora Boisvert">
@@ -179,8 +182,8 @@
 </a>
 
 
-        
-      </div>
+        </div>
+      
     </div>
   </div>
   <div class="wrap" style="margin-top:2rem; font-size:0.85rem; color:#9aa6b3;">
