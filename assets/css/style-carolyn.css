@@ -499,3 +499,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: 0 1.2rem;
 }
 .footer-nav-columns p { margin: 0; }
+
+/* ---------- Groupes "Suivre X" côte à côte dans le footer ---------- */
+.social-groupes { display: flex; gap: 2rem; flex-wrap: wrap; }

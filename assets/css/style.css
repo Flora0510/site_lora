@@ -692,3 +692,5 @@ textarea:focus-visible {
 .footer-nav-columns p {
   margin: 0;
 }
+/* ---------- Groupes "Suivre X" côte à côte dans le footer ---------- */
+.social-groupes { display: flex; gap: 2rem; flex-wrap: wrap; }

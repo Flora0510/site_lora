@@ -1259,3 +1259,5 @@ summary::after {
   color:
     #fff;
 }
+/* ---------- Groupes "Suivre X" côte à côte dans le footer ---------- */
+.social-groupes { display: flex; gap: 2rem; flex-wrap: wrap; }
