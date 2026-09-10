@@ -71,6 +71,9 @@ a:hover {
   background: var(--color-navy);
   color: #fff;
   border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .site-header .wrap {
@@ -240,6 +243,8 @@ section.alt {
 .feature-card:nth-child(4) {
   background: var(--color-bg-panel-2);
 }
+
+.feature-card:nth-child(6) { background: var(--color-bg-panel-2); }
 
 /* ---------- Book shelf : couvertures rondes ---------- */
 
