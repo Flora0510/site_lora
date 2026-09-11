@@ -694,3 +694,17 @@ textarea:focus-visible {
 }
 /* ---------- Groupes "Suivre X" côte à côte dans le footer ---------- */
 .social-groupes { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+/* ---------- Filtre par autrice (site commun) ---------- */
+.filtre-auteures { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.filtre-btn {
+  cursor: pointer;
+  border: var(--border);
+  background: var(--color-bg-panel);
+  color: var(--color-navy-deep);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.filtre-btn.active { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }

@@ -502,3 +502,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- Groupes "Suivre X" côte à côte dans le footer ---------- */
 .social-groupes { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+/* ---------- Filtre par autrice (site commun) ---------- */
+.filtre-auteures { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.filtre-btn {
+  cursor: pointer;
+  border: none;
+  background: var(--color-bg-panel);
+  color: var(--color-navy);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.92rem;
+}
+.filtre-btn.active { background: var(--color-coral); color: #fff; }
