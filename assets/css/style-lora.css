@@ -1,96 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
-  /* ---------- Palette Sunny Beach Day ---------- */
+  --color-bg: #F8F3EC;
+  --color-bg-panel: #EDE1D3;
+  --color-bg-panel-2: #F2D6C9;
 
-  --color-bg: #fff9ec;
+  --color-ink: #332A2A;
+  --color-ink-soft: #756866;
 
-  --color-bg-panel: #4fb8ab;
-  --color-bg-panel-2: #ffe4e1;
+  --color-navy: #5A3040;        /* prune chaleureux, header */
+  --color-navy-deep: #3F202C;   /* prune foncé, footer */
 
-  --color-ink: #263238;
-  --color-ink-soft: #59666b;
+  --color-gold: #D98B68;        /* terracotta, accent secondaire */
+  --color-gold-soft: #F2D6C9;
 
-  --color-navy: #24566a;
-  --color-navy-deep: #173c4d;
+  --color-coral: #C85C4A;       /* terracotta soutenu, CTA / accent principal */
 
-  --color-gold: #f4a261;
-  --color-gold-soft: #e9c46a;
+  --border: 2px solid #E2D2C4;
 
-  --color-coral: #ffb2a3;
-  --color-pink: #e76f51;
-  --color-turquoise: #4fb8ab;
-
-  --border: 2px solid #2a9d8f;
-  --radius-cover: 16px;
+  --radius-cover: 18px;
   --max-width: 1120px;
 }
 
+* { box-sizing: border-box; }
 
-/* =========================================================
-   BASE
-   ========================================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-ink);
-  font-family: 'Nunito Sans', system-ui, sans-serif;
+  font-family: 'Work Sans', system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-.display {
-  font-family: 'Lilita One', system-ui, sans-serif;
+h1, h2, h3, .display {
+  font-family: 'Baloo 2', system-ui, sans-serif;
   color: var(--color-navy);
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0 0 0.5em;
-  font-weight: 400;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-}
+h1 { font-size: clamp(2.3rem, 4.5vw, 3.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
 
-h2 {
-  font-size: clamp(1.9rem, 3vw, 2.6rem);
-}
+p { max-width: 64ch; color: var(--color-ink-soft); }
 
-h3 {
-  font-size: 1.3rem;
-}
-
-p {
-  max-width: 64ch;
-  color: var(--color-ink-soft);
-}
-
-a {
-  color: var(--color-pink);
-  text-decoration: none;
-  font-weight: 700;
-}
-
-a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-}
-
-
-/* =========================================================
-   CONTENEUR
-   ========================================================= */
+a { color: var(--color-coral); text-decoration: none; font-weight: 700; }
+a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 
 .wrap {
   max-width: var(--max-width);
@@ -98,11 +57,7 @@ a:hover {
   padding: 0 1.5rem;
 }
 
-
-/* =========================================================
-   HEADER / NAV
-   ========================================================= */
-
+/* ---------- Header / nav ---------- */
 .site-header {
   background: var(--color-navy);
   color: #fff;
@@ -133,16 +88,13 @@ a:hover {
   object-fit: contain;
 }
 
-.site-header .logo:hover {
-  text-decoration: none;
-  opacity: 0.9;
-}
+.site-header .logo:hover { text-decoration: none; opacity: 0.9; }
 
 .nav-toggle {
   display: none;
-  background: var(--color-turquoise);
+  background: rgba(255,255,255,0.15);
   border: none;
-  color: var(--color-navy);
+  color: #fff;
   font-size: 1rem;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
@@ -152,16 +104,16 @@ a:hover {
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 0.35rem;
+  gap: 0.4rem;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
 }
 
 .site-nav a {
-  color: #fff;
+  color: #e6f5f2;
   font-weight: 700;
-  padding: 0.45rem 0.9rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 999px;
   border-bottom: none;
   display: inline-block;
@@ -170,310 +122,88 @@ a:hover {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--color-navy);
-  background: var(--color-gold);
+  background: #fff;
   text-decoration: none;
 }
 
-
-/* =========================================================
-   MOTIF SOUS LE HEADER
-   ========================================================= */
-
-.wave {
-  display: none;
-}
-
+/* Petite bordure à pois plutôt que la vague nautique */
+.wave { display: none; }
 .site-header::after {
   content: "";
   display: block;
-  height: 14px;
-
-  background-image:
-    radial-gradient(
-      circle,
-      var(--color-pink) 3px,
-      transparent 3.5px
-    );
-
+  height: 26px;
+  background-image: radial-gradient(circle, var(--color-coral) 3.5px, transparent 3.6px);
   background-size: 22px 14px;
   background-position: 4px center;
   background-repeat: repeat-x;
 }
 
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
+/* ---------- Hero ---------- */
 .hero {
-  position: relative;
-  overflow: hidden;
-
-  background: var(--color-turquoise);
-  color: var(--color-navy);
-
-  padding: 4rem 0 5rem;
+  background: var(--color-navy);
+  color: #fff;
+  padding: 3.8rem 0 5rem;
   text-align: left;
 }
 
-/* Grand cercle jaune */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  width: 240px;
-  height: 240px;
-
-  border-radius: 50%;
-
-  background: var(--color-gold);
-
-  right: -80px;
-  top: -90px;
-
-  opacity: 0.95;
-}
-
-/* Forme rose */
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 100px;
-  height: 100px;
-
-  background: var(--color-pink);
-
-  border-radius: 48% 52% 42% 58%;
-
-  right: 17%;
-  bottom: -45px;
-
-  transform: rotate(-15deg);
-}
-
-.hero .wrap {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  color: var(--color-navy);
-  max-width: 16ch;
-}
-
-.hero p {
-  color: var(--color-navy);
-  font-size: 1.15rem;
-  max-width: 50ch;
-}
-
-
-/* =========================================================
-   BOUTONS
-   ========================================================= */
+.hero h1 { color: #fff; max-width: 16ch; }
+.hero p { color: #e6f5f2; font-size: 1.15rem; max-width: 50ch; }
 
 .btn {
   display: inline-block;
-
-  background: var(--color-pink);
+  background: var(--color-coral);
   color: #fff;
-
   padding: 0.75rem 1.6rem;
-
   border-radius: 999px;
-
   font-weight: 700;
-
   border: none;
-
-  box-shadow: 0 5px 0 rgba(150, 0, 120, 0.25);
+  box-shadow: 0 6px 16px rgba(214, 51, 108, 0.35);
 }
 
-.btn:hover {
-  text-decoration: none;
-
-  background: #e000b8;
-
-  transform: translateY(-1px);
-}
+.btn:hover { text-decoration: none; background: #7059b0; }
 
 .btn-outline {
   background: transparent;
-
   color: var(--color-navy);
-
   border: 2px solid var(--color-navy);
-
   box-shadow: none;
 }
 
-.btn-outline:hover {
-  background: var(--color-navy);
-  color: #fff;
-}
+.btn-outline:hover { background: var(--color-navy); color: #fff; }
 
+/* ---------- Sections ---------- */
+section { padding: 3.2rem 0; }
+section.alt { background: var(--color-bg-panel); }
 
-/* =========================================================
-   SECTIONS
-   ========================================================= */
+.eyebrow-free-heading { margin-bottom: 1.6rem; }
 
-section {
-  padding: 3.5rem 0;
-}
-
-section.alt {
-  background: var(--color-bg-panel);
-}
-
-.eyebrow-free-heading {
-  margin-bottom: 1.6rem;
-}
-
-
-/* =========================================================
-   TITRES DE SECTION
-   ========================================================= */
-
-section h2 {
-  position: relative;
-}
-
-/* Petite pastille avant le titre */
-
-section h2::before {
-  content: "";
-
-  display: inline-block;
-
-  width: 14px;
-  height: 14px;
-
-  margin-right: 10px;
-
-  background: var(--color-pink);
-
-  border-radius: 50%;
-
-  vertical-align: 0.1em;
-}
-
-section.alt h2::before {
-  background: var(--color-gold);
-}
-
-
-/* =========================================================
-   CARTES
-   ========================================================= */
-
+/* ---------- Ce qu'on propose : cartes pastel rondes ---------- */
 .feature-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(240px, 1fr));
-
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
 }
 
 .feature-card {
-  position: relative;
-
-  border: 3px solid var(--color-turquoise);
-
-  border-radius: 24px;
-
-  background: #fff;
-
-  padding: 1.7rem;
-
-  box-shadow:
-    6px 6px 0 var(--color-turquoise);
+  border: none;
+  border-radius: 20px;
+  background: var(--color-bg-panel);
+  padding: 1.6rem;
+  box-shadow: 0 4px 14px rgba(76, 166, 155, 0.08);
 }
 
-/* Petite pastille au-dessus */
+.feature-card:nth-child(2) { background: var(--color-bg-panel-2); }
 
-.feature-card::before {
-  content: "";
+.feature-card:nth-child(4) { background: var(--color-bg-panel-2); }
 
-  position: absolute;
-
-  width: 18px;
-  height: 18px;
-
-  border-radius: 50%;
-
-  background: var(--color-gold);
-
-  top: -9px;
-  right: 24px;
-}
-
-/*
-   IMPORTANT :
-   pas de ::after ici.
-   On retire volontairement la forme
-   écrasée au bas des cartes.
-*/
+.feature-card:nth-child(6) { background: var(--color-bg-panel-2); }
 
 
-/* Carte 2 */
-
-.feature-card:nth-child(2) {
-  border-color: var(--color-pink);
-
-  box-shadow:
-    6px 6px 0 var(--color-pink);
-}
-
-.feature-card:nth-child(2)::before {
-  background: var(--color-turquoise);
-}
-
-
-/* Carte 3 */
-
-.feature-card:nth-child(3) {
-  border-color: var(--color-gold);
-
-  box-shadow:
-    6px 6px 0 var(--color-gold);
-}
-
-.feature-card:nth-child(3)::before {
-  background: var(--color-pink);
-}
-
-
-/* Carte 4 */
-
-.feature-card:nth-child(4) {
-  border-color: var(--color-coral);
-
-  box-shadow:
-    6px 6px 0 var(--color-coral);
-}
-
-.feature-card:nth-child(4)::before {
-  background: var(--color-gold);
-}
-
-
-/* =========================================================
-   LIVRES
-   ========================================================= */
-
+/* ---------- Book shelf : couvertures rondes, sans rotation ---------- */
 .shelf {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fill, minmax(155px, 1fr));
-
-  gap: 2rem 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 1.8rem 1.3rem;
 }
 
 .book {
@@ -481,784 +211,301 @@ section.alt h2::before {
   color: var(--color-ink);
 }
 
-.book:hover {
-  text-decoration: none;
-}
-
-
-/* Couverture */
+.book:hover { text-decoration: none; }
 
 .book-cover {
   border: none;
   border-radius: var(--radius-cover);
-
   overflow: hidden;
-
   aspect-ratio: 2 / 3;
-
   background: var(--color-bg-panel);
-
-  /*
-    Pas de bordure blanche.
-    Ombre colorée directement sous la couverture.
-  */
-
-  box-shadow:
-    5px 6px 0 var(--color-navy);
-
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+  box-shadow: 0 6px 16px rgba(76, 166, 155, 0.16);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.book-cover.carre {
-  aspect-ratio: 1 / 1;
-}
+.book-cover.carre { aspect-ratio: 1 / 1; }
 
 .book:hover .book-cover {
-  transform:
-    translateY(-6px)
-    rotate(-1deg);
-
-  box-shadow:
-    8px 9px 0 var(--color-pink);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(76, 166, 155, 0.24);
 }
 
-.book-cover img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
+.book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .book h3 {
-  font-family: 'Lilita One', sans-serif;
-
-  font-size: 1.1rem;
-
-  font-weight: 400;
-
-  margin-top: 0.8rem;
-
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
   color: var(--color-navy);
 }
 
 .book .achat {
   font-size: 0.85rem;
-
   font-weight: 700;
-
-  color: var(--color-pink);
+  color: var(--color-coral);
 }
 
-
-/* =========================================================
-   FICHE LIVRE
-   ========================================================= */
-
+/* ---------- Fiche livre ---------- */
 .livre-detail {
   display: grid;
-
   grid-template-columns: 260px 1fr;
-
   gap: 2.5rem;
-
   align-items: start;
 }
 
 @media (max-width: 640px) {
-  .livre-detail {
-    grid-template-columns: 1fr;
-  }
+  .livre-detail { grid-template-columns: 1fr; }
 }
 
-.livre-detail .book-cover:hover {
-  transform: none;
-}
+.livre-detail .book-cover:hover { transform: none; }
 
-
-/* =========================================================
-   ÉVÉNEMENTS
-   ========================================================= */
-
+/* ---------- Événements ---------- */
 .evenement {
-  border-left:
-    6px solid var(--color-pink);
-
-  border-radius:
-    0 18px 18px 0;
-
-  background: #fff;
-
-  padding: 1.1rem 1.3rem;
-
+  border-left: 5px solid var(--color-gold);
+  border-radius: 0 14px 14px 0;
+  background: var(--color-bg-panel);
+  padding: 1rem 1.2rem;
   margin-bottom: 1.2rem;
-
-  box-shadow:
-    5px 5px 0 var(--color-coral);
 }
 
 .evenement .date {
-  font-family:
-    'Lilita One',
-    sans-serif;
-
-  font-weight: 400;
-
-  color: var(--color-pink);
-
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  color: var(--color-coral);
   display: block;
 }
 
-
-/* =========================================================
-   ZONE PROFS
-   ========================================================= */
-
+/* ---------- Zone profs list ---------- */
 .ressource-list {
   display: grid;
   gap: 1.1rem;
 }
 
 .ressource-item {
-  border:
-    2px solid var(--color-turquoise);
-
+  border: none;
   border-radius: 18px;
-
-  background: #fff;
-
+  background: var(--color-bg-panel);
   padding: 1.3rem 1.5rem;
-
-  box-shadow:
-    5px 5px 0 var(--color-turquoise);
+  box-shadow: 0 4px 14px rgba(76, 166, 155, 0.08);
 }
 
-
-/* =========================================================
-   FORMULAIRE
-   ========================================================= */
-
+/* ---------- Contact form ---------- */
 form.contact {
   display: grid;
-
   gap: 1.1rem;
-
   max-width: 480px;
 }
 
-form.contact label {
-  font-weight: 700;
-
-  font-family:
-    'Lilita One',
-    sans-serif;
-
-  color: var(--color-navy);
-}
+form.contact label { font-weight: 700; font-family: 'Baloo 2', sans-serif; color: var(--color-navy); }
 
 form.contact input,
 form.contact textarea {
-  padding: 0.7rem 0.9rem;
-
-  border:
-    2px solid var(--color-turquoise);
-
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--color-gold-soft);
   border-radius: 14px;
-
   font-family: inherit;
-
   font-size: 1rem;
-
   background: #fff;
 }
 
 form.contact input:focus,
 form.contact textarea:focus {
-  border-color:
-    var(--color-pink);
-
+  border-color: var(--color-coral);
   outline: none;
 }
 
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
+/* ---------- Footer ---------- */
 .site-footer {
-  background:
-    var(--color-navy-deep);
-
-  color: #dceff1;
-
+  background: var(--color-navy-deep);
+  color: #d9ede9;
   padding: 2.6rem 0;
-
   margin-top: 3rem;
-
   font-size: 0.92rem;
 }
 
-.site-footer a {
-  color: #fff;
-}
+.site-footer a { color: #fff; }
 
 .footer-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(180px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.6rem;
 }
 
 .footer-grid h3 {
-  font-family:
-    'Lilita One',
-    sans-serif;
-
-  color: var(--color-gold);
-
-  font-size: 1rem;
+  font-family: 'Baloo 2', sans-serif;
+  color: #dcc9ee;
+  font-size: 0.95rem;
 }
 
 .social-links {
   display: flex;
-
   gap: 1rem;
-
   margin-top: 0.5rem;
 }
 
-
-/* =========================================================
-   RESPONSIVE NAV
-   ========================================================= */
-
+/* ---------- Responsive nav ---------- */
 @media (max-width: 720px) {
-
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  .site-nav {
-    display: none;
-    width: 100%;
-  }
-
-  .site-nav.open {
-    display: block;
-  }
-
-  .site-nav ul {
-    flex-direction: column;
-
-    gap: 0.5rem;
-
-    padding: 1rem 0;
-  }
-
-  .site-nav a {
-    display: block;
-  }
-
-  .site-header .wrap {
-    flex-wrap: wrap;
-  }
+  .nav-toggle { display: inline-block; }
+  .site-nav { display: none; width: 100%; }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 0.5rem; padding: 1rem 0; }
+  .site-nav a { display: block; }
+  .site-header .wrap { flex-wrap: wrap; }
 }
 
-
-/* =========================================================
-   ACCESSIBILITÉ
-   ========================================================= */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-
-  outline:
-    3px solid var(--color-gold);
-
+/* ---------- Accessibilité ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-coral);
   outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-
-  * {
-    transition: none !important;
-
-    scroll-behavior: auto !important;
-  }
+  * { transition: none !important; scroll-behavior: auto !important; }
 }
 
-
-/* =========================================================
-   ACCORDÉON
-   ========================================================= */
-
-.accordion {
-  margin-top: 1.5rem;
-
-  display: grid;
-
-  gap: 0.8rem;
-}
-
+/* ---------- Accordéon (guide de solutions, etc.) ---------- */
+.accordion { margin-top: 1.5rem; display: grid; gap: 0.8rem; }
 .accordion-item {
-  border:
-    2px solid var(--color-turquoise);
-
+  border: none;
   border-radius: 16px;
-
-  background: #fff;
-
-  box-shadow:
-    5px 5px 0 var(--color-turquoise);
-
+  background: var(--color-bg-panel);
+  box-shadow: 0 4px 14px rgba(76, 166, 155, 0.08);
   overflow: hidden;
 }
-
 .accordion-item summary {
   cursor: pointer;
-
   padding: 1rem 1.3rem;
-
-  font-family:
-    'Lilita One',
-    sans-serif;
-
-  font-weight: 400;
-
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
   color: var(--color-navy);
-
   list-style: none;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 1rem;
 }
-
-.accordion-item summary::-webkit-details-marker {
-  display: none;
-}
-
+.accordion-item summary::-webkit-details-marker { display: none; }
 .accordion-item summary::after {
   content: "";
-
   flex-shrink: 0;
-
   width: 10px;
   height: 10px;
-
-  border-right:
-    2px solid var(--color-pink);
-
-  border-bottom:
-    2px solid var(--color-pink);
-
-  transform:
-    rotate(45deg);
-
-  transition:
-    transform 0.15s ease;
+  border-right: 2px solid var(--color-coral);
+  border-bottom: 2px solid var(--color-coral);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
 }
+.accordion-item[open] summary::after { transform: rotate(-135deg); }
+.accordion-content { padding: 0 1.3rem 1.3rem; }
+.accordion-content img { max-width: 100%; border-radius: 12px; margin: 0.5rem 0; }
 
-.accordion-item[open]
-summary::after {
+/* ---------- Texte pleine largeur (ex. pages ressource avec contenu riche) ---------- */
+.texte-large p { max-width: none; }
 
-  transform:
-    rotate(-135deg);
-}
-
-.accordion-content {
-  padding:
-    0 1.3rem 1.3rem;
-}
-
-.accordion-content img {
-  max-width: 100%;
-
-  border-radius: 12px;
-
-  margin:
-    0.5rem 0;
-}
-
-
-/* =========================================================
-   TEXTE PLEINE LARGEUR
-   ========================================================= */
-
-.texte-large p {
-  max-width: none;
-}
-
-
-/* =========================================================
-   BLOC AUTRICE
-   ========================================================= */
-
+/* ---------- Bloc autrice : photo + texte superposé ---------- */
 .auteure-bloc {
-  position: relative;
-
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-
   margin: 3rem 0;
 }
-
-
-/* Cercle jaune */
-
-.auteure-bloc::before {
-  content: "";
-
-  position: absolute;
-
-  width: 70px;
-  height: 70px;
-
-  background:
-    var(--color-gold);
-
-  border-radius: 50%;
-
-  left: -25px;
-  top: -25px;
-
-  z-index: 0;
-}
-
-
-/* Forme rose */
-
-.auteure-bloc::after {
-  content: "";
-
-  position: absolute;
-
-  width: 55px;
-  height: 55px;
-
-  background:
-    var(--color-pink);
-
-  border-radius:
-    45% 55% 60% 40%;
-
-  right: -15px;
-  bottom: 10px;
-
-  transform:
-    rotate(-20deg);
-
-  z-index: 0;
-}
-
-.auteure-photo {
-  grid-column: 1;
-  grid-row: 1;
-
-  position: relative;
-
-  z-index: 1;
-}
-
+.auteure-photo { grid-column: 1; grid-row: 1; }
 .auteure-photo img {
   width: 100%;
-
   display: block;
-
   aspect-ratio: 4 / 5;
-
   object-fit: cover;
-
-  border-radius: 24px;
-
-  border: none;
-
-  box-shadow:
-    7px 7px 0 var(--color-turquoise);
+  border-radius: 20px;
 }
-
 .auteure-texte {
   grid-column: 2;
   grid-row: 1;
-
   position: relative;
-
   z-index: 2;
-
   margin-left: -3.5rem;
-
-  background: #fff;
-
-  border:
-    3px solid var(--color-pink);
-
-  border-radius: 22px;
-
-  box-shadow:
-    7px 7px 0 var(--color-pink);
-
+  background: var(--color-bg-panel);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(76, 166, 155, 0.14);
   padding: 2rem;
 }
-
-.auteure-bloc--inverse
-.auteure-photo {
-  grid-column: 2;
-}
-
-.auteure-bloc--inverse
-.auteure-texte {
+.auteure-bloc--inverse .auteure-photo { grid-column: 2; }
+.auteure-bloc--inverse .auteure-texte {
   grid-column: 1;
-
   margin-left: 0;
-
   margin-right: -3.5rem;
 }
-
 @media (max-width: 720px) {
-
-  .auteure-bloc,
-  .auteure-bloc--inverse {
-    grid-template-columns: 1fr;
-  }
-
-  .auteure-bloc .auteure-photo,
-  .auteure-bloc--inverse .auteure-photo {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .auteure-bloc .auteure-texte,
-  .auteure-bloc--inverse .auteure-texte {
+  .auteure-bloc, .auteure-bloc--inverse { grid-template-columns: 1fr; }
+  .auteure-bloc .auteure-photo, .auteure-bloc--inverse .auteure-photo { grid-column: 1; grid-row: 1; }
+  .auteure-bloc .auteure-texte, .auteure-bloc--inverse .auteure-texte {
     grid-column: 1;
     grid-row: 2;
-
-    margin:
-      -2.5rem 1.2rem 0;
+    margin: -2.5rem 1.2rem 0;
   }
 }
 
-
-/* =========================================================
-   SÉPARATEUR À PETITS POINTS
-   ========================================================= */
-
+/* ---------- Séparateur à petits points ---------- */
 .separateur-points {
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-  gap: 9px;
-
+  gap: 12px;
   margin: 2.5rem 0;
 }
-
 .separateur-points span {
-  width: 9px;
-  height: 9px;
-
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-
-  background:
-    var(--color-turquoise);
-
+  background: var(--color-coral);
   display: block;
 }
 
-.separateur-points span:nth-child(2) {
-  width: 14px;
-  height: 14px;
-
-  background:
-    var(--color-pink);
-}
-
-.separateur-points span:nth-child(3) {
-  background:
-    var(--color-gold);
-}
-
-
-/* =========================================================
-   CARTES ANIMATIONS
-   ========================================================= */
-
+/* ---------- Cartes animations (grille plus large que .shelf) ---------- */
 .animation-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.8rem;
 }
+.animation-card { padding: 1.7rem 1.9rem; }
+.animation-card h3 { font-size: 1.3rem; }
+.animation-card-niveau { font-size: 0.85rem; font-weight: 700; color: var(--color-coral); margin: 0 0 0.5rem; font-family: 'Baloo 2', sans-serif; }
 
-.animation-card {
-  position: relative;
-
-  padding:
-    1.7rem 1.9rem;
-
-  border:
-    3px solid var(--color-turquoise);
-
-  border-radius: 22px;
-
-  background: #fff;
-
-  box-shadow:
-    6px 6px 0 var(--color-turquoise);
-
-  overflow: visible;
-}
-
-
-/* Petite étoile */
-
-.animation-card::before {
-  content: "✦";
-
-  position: absolute;
-
-  top: -18px;
-  right: 20px;
-
-  font-family:
-    'Lilita One',
-    sans-serif;
-
-  font-size: 1.8rem;
-
-  color:
-    var(--color-pink);
-}
-
-.animation-card:nth-child(2n) {
-  border-color:
-    var(--color-pink);
-
-  box-shadow:
-    6px 6px 0 var(--color-pink);
-}
-
-.animation-card:nth-child(2n)::before {
-  color:
-    var(--color-gold);
-}
-
-.animation-card h3 {
-  font-size: 1.4rem;
-}
-
-.animation-card-niveau {
-  font-size: 0.85rem;
-
-  font-weight: 700;
-
-  color:
-    var(--color-pink);
-
-  margin:
-    0 0 0.5rem;
-
-  font-family:
-    'Lilita One',
-    sans-serif;
-}
-
-
-/* =========================================================
-   PETITES COUVERTURES
-   ========================================================= */
-
-.animation-card-livres {
-  display: flex;
-
-  gap: 0.5rem;
-
-  margin-top: 0.9rem;
-}
-
+/* ---------- Petites couvertures de romans reliés sur la carte animation ---------- */
+.animation-card-livres { display: flex; gap: 0.5rem; margin-top: 0.9rem; }
 .animation-card-livre-cover {
   display: block;
-
   width: 100px;
-
   aspect-ratio: 2 / 3;
-
   overflow: hidden;
-
-  border-radius: 7px;
-
-  /*
-    Pas de contour blanc.
-  */
-
-  box-shadow:
-    3px 3px 0 var(--color-navy);
-
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(76, 166, 155, 0.18);
   flex-shrink: 0;
 }
+.animation-card-livre-cover.carre { aspect-ratio: 1 / 1; }
+.animation-card-livre-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.animation-card-livre-cover.carre {
-  aspect-ratio: 1 / 1;
-}
-
-.animation-card-livre-cover img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-
-/* =========================================================
-   RÉSEAUX SOCIAUX
-   ========================================================= */
-
+/* ---------- Icônes des réseaux sociaux (footer) ---------- */
 .social-links a {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 36px;
   height: 36px;
-
   border-radius: 50%;
-
-  background:
-    var(--color-turquoise);
-
-  color:
-    var(--color-navy);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
+.social-links a:hover { background: #fff; color: var(--color-navy); }
 
-.social-links a:hover {
-  background:
-    var(--color-pink);
-
-  color:
-    #fff;
+/* ---------- Navigation du footer sur 2 colonnes ---------- */
+.footer-nav-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.2rem;
 }
+.footer-nav-columns p { margin: 0; }
+
 /* ---------- Groupes "Suivre X" côte à côte dans le footer ---------- */
 .social-groupes { display: flex; gap: 2rem; flex-wrap: wrap; }
 
@@ -1266,11 +513,13 @@ summary::after {
 .filtre-auteures { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.2rem; }
 .filtre-btn {
   cursor: pointer;
-  border: 1.5px solid var(--color-ink);
-  background: transparent;
-  color: var(--color-ink);
-  padding: 0.5rem 1.1rem;
-  font-weight: 600;
+  border: none;
+  background: var(--color-bg-panel);
+  color: var(--color-navy);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: 'Baloo 2', sans-serif;
   font-size: 0.92rem;
 }
-.filtre-btn.active { background: var(--color-ink); color: var(--color-bg); }
+.filtre-btn.active { background: var(--color-coral); color: #fff; }
