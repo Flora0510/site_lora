@@ -708,3 +708,6 @@ textarea:focus-visible {
   font-size: 0.92rem;
 }
 .filtre-btn.active { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }
+
+/* ---------- Correction : la bio dans le hero est sur une carte claire ---------- */
+.hero .auteure-texte p { color: var(--color-ink-soft); max-width: none; }
