@@ -146,7 +146,7 @@ a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
   text-align: left;
 }
 
-.hero h1 { color: #fff; max-width: 16ch; }
+.hero h1 { color: #fff; max-width: 66%; }
 .hero p { color: #e6f5f2; font-size: 1.15rem; max-width: 50ch; }
 
 .btn {
@@ -406,7 +406,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ---------- Bloc autrice : photo + texte superposé ---------- */
 .auteure-bloc {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
   margin: 3rem 0;
 }

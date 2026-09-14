@@ -169,7 +169,7 @@ a:hover {
 
 .hero h1 {
   color: #fff;
-  max-width: 16ch;
+  max-width: 66%;
 }
 
 .hero p {
@@ -532,7 +532,7 @@ textarea:focus-visible {
 
 .auteure-bloc {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
   margin: 3rem 0;
 }
