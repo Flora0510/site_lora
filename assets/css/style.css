@@ -16,12 +16,9 @@
 
   --color-coral: #17bcd4;
 
-  /* Palette d'accents supplémentaires (cartes, couvertures) - n'affecte
-     jamais les liens/boutons, qui restent en --color-coral comme avant */
-  --color-accent-a: #ff7a5c;  /* corail */
-  --color-accent-b: #ffc145;  /* jaune soleil */
-  --color-accent-c: #4caf7d;  /* vert frais */
-  --color-accent-d: #8b6ff5;  /* violet */
+  /* Couleurs pour la décoration en fond (points/cercles), pas pour le contenu */
+  --color-deco-corail: #ff7a5c;
+  --color-deco-mauve: #a78bfa;
 
   --border: 2px solid #bcecf2;
 
@@ -168,10 +165,56 @@ a:hover {
 /* ---------- Hero ---------- */
 
 .hero {
+  position: relative;
+  overflow: hidden;
   background: var(--color-navy);
   color: #fff;
   padding: 3.8rem 0 5rem;
   text-align: left;
+}
+
+.hero::before {
+  /* petits points dispersés, très discrets */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--color-deco-mauve) 1.5px, transparent 1.8px);
+  background-size: 34px 34px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.hero::after {
+  /* cercle en contour, purement décoratif */
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: 8%;
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--color-deco-corail);
+  border-radius: 50%;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .wrap::after {
+  content: "";
+  position: absolute;
+  bottom: -2.5rem;
+  right: 4%;
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--color-deco-mauve);
+  border-radius: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero h1 {
@@ -237,23 +280,21 @@ section.alt {
 
 .feature-card {
   border: none;
-  border-top: 5px solid var(--color-accent-a);
   border-radius: 20px;
   background: var(--color-bg-panel);
   padding: 1.6rem;
   box-shadow: 0 4px 14px rgba(7, 7, 73, 0.08);
 }
 
-.feature-card:nth-child(4n+2) {
+.feature-card:nth-child(2) {
   background: var(--color-bg-panel-2);
-  border-top-color: var(--color-accent-b);
 }
 
-.feature-card:nth-child(4n+3) {
-  border-top-color: var(--color-accent-c);
+.feature-card:nth-child(4) {
+  background: var(--color-bg-panel-2);
 }
 
-.feature-card:nth-child(4n+4) { background: var(--color-bg-panel-2); border-top-color: var(--color-accent-d); }
+.feature-card:nth-child(6) { background: var(--color-bg-panel-2); }
 
 /* ---------- Book shelf : couvertures rondes ---------- */
 
@@ -273,7 +314,6 @@ section.alt {
 }
 
 .book-cover {
-  position: relative;
   border: none;
   border-radius: var(--radius-cover);
   overflow: hidden;
@@ -282,22 +322,6 @@ section.alt {
   box-shadow: 0 6px 16px rgba(7, 7, 73, 0.16);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-
-.book .book-cover::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--color-accent-a);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
-.book:nth-child(4n+2) .book-cover::after { background: var(--color-accent-b); }
-.book:nth-child(4n+3) .book-cover::after { background: var(--color-accent-c); }
-.book:nth-child(4n+4) .book-cover::after { background: var(--color-accent-d); }
 
 .book-cover.carre {
   aspect-ratio: 1 / 1;
