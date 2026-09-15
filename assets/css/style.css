@@ -32,7 +32,11 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22260%22%20height%3D%22260%22%20viewBox%3D%220%200%20260%20260%22%3E%0A%3Ccircle%20cx%3D%2240%22%20cy%3D%2250%22%20r%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23ff7a5c%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%22210%22%20cy%3D%22190%22%20r%3D%2214%22%20fill%3D%22none%22%20stroke%3D%22%23a78bfa%22%20stroke-width%3D%222%22/%3E%0A%3Ccircle%20cx%3D%22150%22%20cy%3D%2230%22%20r%3D%229%22%20fill%3D%22none%22%20stroke%3D%22%23a78bfa%22%20stroke-width%3D%221.6%22/%3E%0A%3Cpath%20d%3D%22M70%20180%20L73%20190%20L83%20193%20L73%20196%20L70%20206%20L67%20196%20L57%20193%20L67%20190%20Z%22%20fill%3D%22%23ff7a5c%22/%3E%0A%3Cpath%20d%3D%22M220%2070%20L222%2077%20L229%2079%20L222%2081%20L220%2088%20L218%2081%20L211%2079%20L218%2077%20Z%22%20fill%3D%22%23a78bfa%22/%3E%0A%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 260px 260px;
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: 'Nunito Sans', system-ui, sans-serif;
   font-size: 17px;
@@ -174,13 +178,16 @@ a:hover {
 }
 
 .hero::before {
-  /* petits points dispersés, très discrets */
+  /* 3e cercle en contour, purement décoratif */
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, var(--color-deco-mauve) 1.5px, transparent 1.8px);
-  background-size: 34px 34px;
-  opacity: 0.18;
+  bottom: -40px;
+  left: -30px;
+  width: 130px;
+  height: 130px;
+  border: 2px solid var(--color-deco-mauve);
+  border-radius: 50%;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -213,6 +220,21 @@ a:hover {
   border: 2px solid var(--color-deco-mauve);
   border-radius: 50%;
   opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero .wrap::before {
+  /* petite étoile pleine, purement décorative */
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 18%;
+  width: 22px;
+  height: 22px;
+  background: var(--color-deco-corail);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.5;
   pointer-events: none;
   z-index: -1;
 }
