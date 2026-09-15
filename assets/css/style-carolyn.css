@@ -400,7 +400,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ---------- Bloc autrice : photo + texte superposé ---------- */
 .auteure-bloc {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
   margin: 3rem 0;
 }
