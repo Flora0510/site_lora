@@ -34,4 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // Reconstruit les liens courriel au chargement plutôt que de les écrire en
+  // clair dans le HTML, pour limiter le harvesting automatisé par robots.
+  document.querySelectorAll('[data-mailto-user]').forEach(function (lien) {
+    var adresse = lien.getAttribute('data-mailto-user') + '@' + lien.getAttribute('data-mailto-domain');
+    lien.setAttribute('href', 'mailto:' + adresse);
+    if (lien.hasAttribute('data-mailto-texte')) {
+      lien.textContent = adresse;
+    }
+  });
 });
