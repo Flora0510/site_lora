@@ -526,3 +526,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- Correction : la bio dans le hero est sur une carte claire ---------- */
 .hero .auteure-texte p { color: var(--color-ink-soft); max-width: none; }
+
+/* ---------- Bloc image + texte côte à côte (ex. parcours littéraire) ---------- */
+.image-texte {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+.image-texte img {
+  width: 64px;
+  height: auto;
+  flex-shrink: 0;
+}
+.image-texte p { margin: 0 0 0.8rem; }
+.image-texte p:last-child { margin-bottom: 0; }
+
