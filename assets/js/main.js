@@ -45,3 +45,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+  const carrousel = document.querySelector(".carrousel");
+  const images = carrousel.querySelectorAll(".zone-image img");
+  const precedente = carrousel.querySelector(".precedente");
+  const suivante = carrousel.querySelector(".suivante");
+
+  let index = 0;
+
+  function afficherImage(nouvelIndex) {
+    images[index].classList.remove("image-active");
+
+    index = (nouvelIndex + images.length) % images.length;
+
+    images[index].classList.add("image-active");
+  }
+
+  precedente.addEventListener("click", () => {
+    afficherImage(index - 1);
+  });
+
+  suivante.addEventListener("click", () => {
+    afficherImage(index + 1);
+  });

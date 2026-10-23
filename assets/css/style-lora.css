@@ -314,6 +314,64 @@ form.contact textarea:focus {
   outline: none;
 }
 
+/* ---------- Carrousel ---------- */
+.carrousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.zone-image {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.zone-image img {
+  display: none;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.zone-image img.image-active {
+  display: block;
+}
+
+.fleche {
+  border: none;
+  background: transparent;
+  color: var(--color-navy);
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.fleche:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .zone-image {
+    height: 300px;
+  }
+
+  .carrousel {
+    gap: 4px;
+  }
+}
+/* ---------- Carrousel ---------- */
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--color-navy-deep);
