@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-  const carrousel = document.querySelector(".carrousel");
+document.querySelectorAll(".carrousel").forEach((carrousel) => {
   const images = carrousel.querySelectorAll(".zone-image img");
   const precedente = carrousel.querySelector(".precedente");
   const suivante = carrousel.querySelector(".suivante");
@@ -69,3 +69,5 @@ document.addEventListener('DOMContentLoaded', function () {
   suivante.addEventListener("click", () => {
     afficherImage(index + 1);
   });
+});
+
